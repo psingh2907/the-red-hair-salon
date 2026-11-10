@@ -1,0 +1,338 @@
+<!doctype html>
+<html lang="hi-Latn">
+<head>
+<meta charset="utf-8" />
+<title>Website Proposal – THE RED HAIR FAMILY SALON</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  /* ── Edit prices, name, contact and dates directly in the HTML below ── */
+  :root {
+    --ink: #0e0c0b; --ink-soft: #1c1715; --ivory: #f5f1ea; --paper: #fbf9f5; --sand: #ece4d7;
+    --muted: #5c5550; --rouge: #7a1f24; --rouge-deep: #57161a; --gold: #c9a46a; --gold-deep: #8a6a36;
+    --wa: #25d366;
+  }
+  @page { size: A4; margin: 0; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { background: #d9d4cc; }
+  body {
+    font-family: Manrope, "Helvetica Neue", Arial, sans-serif; color: var(--ink);
+    -webkit-print-color-adjust: exact; print-color-adjust: exact; font-size: 9.6pt; line-height: 1.45;
+  }
+  .page {
+    width: 210mm; height: 297mm; margin: 0 auto 8mm; background: var(--ivory);
+    position: relative; overflow: hidden; page-break-after: always; break-after: page;
+  }
+  .page:last-child { page-break-after: auto; break-after: auto; margin-bottom: 0; }
+  @media print { html, body { background: none; } .page { margin: 0; } }
+
+  .serif { font-family: "Cormorant Garamond", Georgia, serif; font-weight: 500; letter-spacing: -0.01em; }
+  .eyebrow { font-size: 7pt; font-weight: 700; letter-spacing: 0.24em; text-transform: uppercase; }
+  .rupee { font-family: Manrope, "Helvetica Neue", Arial, sans-serif; font-weight: 600; }
+  em { font-style: italic; }
+
+  /* Header band */
+  .band { background: var(--ink); color: var(--ivory); padding: 12mm 14mm 10mm; position: relative; }
+  .band .top { display: flex; justify-content: space-between; align-items: flex-start; }
+  .brand { line-height: 1; }
+  .brand .name { font-size: 17pt; }
+  .brand .sub { color: var(--gold); font-size: 6pt; letter-spacing: 0.42em; font-weight: 600; margin-top: 1.4mm; }
+  .meta { text-align: right; font-size: 7.6pt; color: #cfc8bf; line-height: 1.6; }
+  .meta b { color: var(--ivory); font-weight: 600; }
+  .band h1 { font-size: 30pt; line-height: 1.02; margin-top: 8mm; max-width: 125mm; }
+  .band h1 em { color: var(--gold); }
+  .band .hook { margin-top: 4mm; color: #d8d1c7; font-size: 10pt; max-width: 118mm; }
+  .rating {
+    position: absolute; right: 14mm; bottom: 10mm; border: 1px solid rgba(201,164,106,.45);
+    padding: 4mm 6mm; text-align: center;
+  }
+  .rating .num { font-size: 32pt; line-height: 1; }
+  .rating .stars { color: var(--gold); letter-spacing: 1.2mm; font-size: 10pt; margin-top: 1mm; }
+  .rating .lbl { font-size: 7pt; color: #cfc8bf; margin-top: 1mm; }
+
+  .wrap { padding: 0 14mm; }
+  .section-title { display: flex; align-items: center; gap: 3mm; color: var(--rouge); margin-bottom: 3.5mm; }
+  .section-title::before { content: ""; width: 7mm; height: 1px; background: currentColor; }
+  h2 { font-size: 20pt; line-height: 1.05; margin-bottom: 4mm; }
+  h2 em { color: var(--rouge); }
+
+  /* Page 1: benefits + phones */
+  .grid-a { display: grid; grid-template-columns: 1fr 72mm; gap: 8mm; margin-top: 9mm; }
+  .benefits { display: grid; gap: 3.6mm; }
+  .benefit { display: grid; grid-template-columns: 9mm 1fr; gap: 3mm; align-items: start; padding-bottom: 3.6mm; border-bottom: 1px solid rgba(14,12,11,.1); }
+  .benefit:last-child { border-bottom: 0; padding-bottom: 0; }
+  .ico { width: 9mm; height: 9mm; border-radius: 50%; background: var(--rouge); color: var(--ivory); display: grid; place-items: center; }
+  .ico svg { width: 4.6mm; height: 4.6mm; }
+  .benefit h3 { font-size: 10.5pt; font-weight: 700; }
+  .benefit p { color: var(--muted); font-size: 8.8pt; margin-top: .6mm; }
+
+  .phones { display: flex; gap: 4mm; justify-content: center; }
+  .phone { width: 34mm; }
+  .phone .frame { border: 1.6mm solid var(--ink); border-radius: 5mm; overflow: hidden; background: var(--ink); aspect-ratio: 390 / 844; box-shadow: 0 3mm 8mm rgba(0,0,0,.18); }
+  .phone img { width: 100%; height: 100%; object-fit: cover; object-position: top; display: block; }
+  .phone .cap { text-align: center; font-size: 7.2pt; color: var(--muted); margin-top: 2mm; font-weight: 600; }
+
+  /* Page 1: booking flow */
+  .flow { margin-top: 8mm; background: var(--paper); border: 1px solid rgba(14,12,11,.08); padding: 6mm; display: grid; grid-template-columns: 1fr 66mm; gap: 7mm; align-items: start; }
+  .flow .steps { margin-top: 1mm; gap: 4.4mm; }
+  .steps { display: grid; gap: 3.2mm; }
+  .step { display: grid; grid-template-columns: 8mm 1fr; gap: 2.5mm; }
+  .step .n { font-size: 17pt; color: var(--rouge); line-height: .9; }
+  .step b { font-size: 9.8pt; }
+  .step p { color: var(--muted); font-size: 8.6pt; }
+  .chat { background: #e5ddd5; border-radius: 3mm; padding: 4mm; }
+  .chat .head { display: flex; align-items: center; gap: 2mm; font-size: 7.4pt; font-weight: 700; color: #075e54; margin-bottom: 2.5mm; }
+  .chat .head svg { width: 4mm; height: 4mm; color: var(--wa); }
+  .bubble { background: #dcf8c6; border-radius: 2mm 0 2mm 2mm; padding: 3mm; font-size: 7.4pt; line-height: 1.45; color: #111; white-space: pre-line; box-shadow: 0 .3mm .6mm rgba(0,0,0,.12); }
+  .bubble .time { display: block; text-align: right; color: #667; font-size: 6.2pt; margin-top: 1mm; }
+
+  .note { margin-top: 6mm; font-size: 7.8pt; color: var(--muted); display: flex; gap: 2mm; align-items: flex-start; }
+  .note b { color: var(--ink); }
+  .pagefoot { position: absolute; left: 14mm; right: 14mm; bottom: 8mm; display: flex; justify-content: space-between; font-size: 7.2pt; color: var(--muted); border-top: 1px solid rgba(14,12,11,.12); padding-top: 2.5mm; }
+
+  /* Page 2: packages */
+  .p2head { padding: 13mm 14mm 0; }
+  .p2head p { color: var(--muted); font-size: 9.4pt; max-width: 150mm; }
+  .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4mm; padding: 7mm 14mm 0; align-items: stretch; }
+  .card { background: var(--paper); border: 1px solid rgba(14,12,11,.12); padding: 6mm 5mm 5mm; display: flex; flex-direction: column; position: relative; }
+  .card.pop { background: var(--ink); color: var(--ivory); border-color: var(--ink); transform: translateY(-2.5mm); box-shadow: 0 4mm 10mm rgba(0,0,0,.18); }
+  .badge { position: absolute; top: -3.2mm; left: 50%; transform: translateX(-50%); background: var(--rouge); color: var(--ivory); font-size: 6.4pt; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; padding: 1.3mm 3.5mm; white-space: nowrap; }
+  .card .tier { font-size: 17pt; line-height: 1; }
+  .card .for { font-size: 7.6pt; color: var(--muted); margin-top: 1.2mm; min-height: 7mm; }
+  .card.pop .for { color: #bdb6ad; }
+  .price { margin-top: 4mm; font-size: 22pt; line-height: 1; letter-spacing: -.02em; }
+  .card.pop .price { color: var(--gold); }
+  .once { font-size: 7pt; color: var(--muted); margin-top: 1mm; }
+  .card.pop .once { color: #bdb6ad; }
+  .card ul { list-style: none; margin-top: 4.5mm; padding-top: 4mm; border-top: 1px solid rgba(14,12,11,.12); display: grid; gap: 2.2mm; flex: 1; align-content: start; }
+  .card.pop ul { border-top-color: rgba(245,241,234,.15); }
+  .card li { display: grid; grid-template-columns: 3.8mm 1fr; gap: 1.6mm; font-size: 8.3pt; line-height: 1.35; }
+  .card li svg { width: 3.4mm; height: 3.4mm; color: var(--rouge); margin-top: .5mm; }
+  .card.pop li svg { color: var(--gold); }
+  .card li.plus { font-weight: 700; }
+  .renew { margin-top: 4.5mm; padding-top: 3mm; border-top: 1px dashed rgba(14,12,11,.2); font-size: 7.8pt; display: flex; justify-content: space-between; align-items: baseline; }
+  .card.pop .renew { border-top-color: rgba(245,241,234,.25); }
+  .renew b { font-size: 9.6pt; }
+
+  .info { display: grid; grid-template-columns: 1fr 1fr; gap: 4mm; padding: 8mm 14mm 0; }
+  .box { border: 1px solid rgba(14,12,11,.12); background: var(--paper); padding: 5mm; }
+  .box h3 { font-size: 13pt; line-height: 1.1; margin-bottom: 2.4mm; }
+  .box p, .box li { font-size: 8.5pt; color: #3c3632; }
+  .box ul { list-style: none; display: grid; gap: 1.6mm; }
+  .box li { display: grid; grid-template-columns: 4mm 1fr; gap: 1.2mm; }
+  .box li::before { content: ""; width: 2.8mm; height: 2.8mm; border: 1.2px solid var(--rouge); border-radius: .6mm; margin-top: .6mm; }
+  .box .two { grid-template-columns: 1fr 1fr; column-gap: 4mm; }
+  .box ul.bullets li::before { width: 1.8mm; height: 1.8mm; border: 0; border-radius: 50%; background: var(--rouge); margin-top: 1.5mm; }
+  .timeline { display: flex; gap: 3mm; margin-top: 3mm; }
+  .timeline div { flex: 1; background: var(--sand); padding: 2.6mm; font-size: 7.8pt; }
+  .timeline b { display: block; color: var(--rouge); font-size: 8.6pt; }
+
+  .cta { position: absolute; left: 0; right: 0; bottom: 0; background: var(--rouge-deep); color: var(--ivory); padding: 8mm 14mm; display: flex; justify-content: space-between; align-items: center; }
+  .cta .big { font-size: 20pt; line-height: 1.05; }
+  .cta .big em { color: var(--gold); }
+  .cta .who { text-align: right; font-size: 8.4pt; line-height: 1.6; }
+  .cta .who .wa { display: inline-flex; align-items: center; gap: 1.6mm; font-size: 12pt; font-weight: 700; }
+  .cta .who .wa svg { width: 4.4mm; height: 4.4mm; color: var(--wa); }
+  .valid { font-size: 7pt; color: #e6cfcf; margin-top: 1mm; }
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute">
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-wa" viewBox="0 0 24 24"><path fill="currentColor" d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.26-.46-2.39-1.47-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.61-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.07c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.7.63.71.22 1.36.19 1.87.12.57-.09 1.76-.72 2-1.42.25-.7.25-1.29.18-1.41-.08-.13-.27-.2-.57-.35M12.05 21.78h-.01a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.86 9.86 0 0 1-1.51-5.26c0-5.45 4.44-9.88 9.89-9.88 2.64 0 5.12 1.03 6.99 2.9a9.83 9.83 0 0 1 2.89 7c0 5.45-4.44 9.88-9.88 9.88M20.46 3.49A11.82 11.82 0 0 0 12.05 0C5.5 0 .16 5.34.16 11.89c0 2.1.55 4.14 1.59 5.95L.06 24l6.3-1.65a11.88 11.88 0 0 0 5.68 1.45h.01c6.55 0 11.89-5.34 11.89-11.89 0-3.18-1.24-6.16-3.48-8.42Z"/></symbol>
+  <symbol id="i-search" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></g></symbol>
+  <symbol id="i-star" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2l3.1 6.3 7 1-5 4.9 1.2 6.9L12 17.8l-6.3 3.3L6.9 14l-5-4.9 7-1z"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></g></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2.2"><rect x="6" y="2" width="12" height="20" rx="2.5"/><path d="M11 18h2" stroke-linecap="round"/></g></symbol>
+</svg>
+
+<!-- ═════════════════════════ PAGE 1 ═════════════════════════ -->
+<section class="page">
+  <header class="band">
+    <div class="top">
+      <div class="brand">
+        <div class="name serif">The Red Hair</div>
+        <div class="sub">FAMILY SALON</div>
+      </div>
+      <div class="meta">
+        <div class="eyebrow" style="color:var(--gold)">Website Proposal</div>
+        <div>Bharhut Nagar, Satna</div>
+        <div>Date: <b>15 September 2026</b></div>
+      </div>
+    </div>
+    <h1 class="serif">Aapke salon ki <em>apni website</em>,<br/>jo customer laaye.</h1>
+    <p class="hook">Google pe log aapko pehle se pasand karte hain. Ab naye customer ko aapki services, photos aur booking, sab ek hi jagah milega.</p>
+    <div class="rating">
+      <div class="num serif">4.9</div>
+      <div class="stars">★★★★★</div>
+      <div class="lbl">223+ Google Reviews</div>
+    </div>
+  </header>
+
+  <div class="wrap">
+    <div class="grid-a">
+      <div>
+        <div class="section-title eyebrow">Website se kya milega</div>
+        <div class="benefits">
+          <div class="benefit">
+            <span class="ico"><svg><use href="#i-search"/></svg></span>
+            <div><h3>Google se aane wala customer ruk jaayega</h3><p>Aapki services, salon ki photos aur rating ek hi page pe. Bharosa turant banega.</p></div>
+          </div>
+          <div class="benefit">
+            <span class="ico"><svg><use href="#i-wa"/></svg></span>
+            <div><h3>Booking seedha aapke WhatsApp pe</h3><p>Customer form bharega, poora message ready hoke aapke WhatsApp pe aayega. Koi naya app nahi.</p></div>
+          </div>
+          <div class="benefit">
+            <span class="ico"><svg><use href="#i-pin"/></svg></span>
+            <div><h3>Ek click mein salon tak rasta</h3><p>"Get Directions" dabate hi Google Maps khulega, seedha Bharhut Nagar tak.</p></div>
+          </div>
+          <div class="benefit">
+            <span class="ico"><svg><use href="#i-phone"/></svg></span>
+            <div><h3>Mobile pe sundar aur tez</h3><p>Zyada log phone se dekhte hain, isliye website phone ke liye hi banayi gayi hai.</p></div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="section-title eyebrow">Aapki website ki jhalak</div>
+        <div class="phones">
+          <div class="phone"><div class="frame"><img src="shot-hero.png" alt="Website ka pehla page mobile pe" /></div><div class="cap">Pehla page</div></div>
+          <div class="phone"><div class="frame"><img src="shot-booking.png" alt="Booking form mobile pe" /></div><div class="cap">Booking form</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="flow">
+      <div>
+        <div class="section-title eyebrow">Booking kaise hogi</div>
+        <div class="steps">
+          <div class="step"><span class="n serif">01</span><div><b>Customer form bharta hai</b><p>Naam, number, service, din aur time. Sirf 1 minute.</p></div></div>
+          <div class="step"><span class="n serif">02</span><div><b>Message aapke WhatsApp pe aata hai</b><p>Saari details ek saath, likhne ki zaroorat nahi.</p></div></div>
+          <div class="step"><span class="n serif">03</span><div><b>Aap reply karke time pakka karte hain</b><p>Jaise roz WhatsApp chalate hain, bilkul waise hi.</p></div></div>
+        </div>
+      </div>
+      <div class="chat">
+        <div class="head"><svg><use href="#i-wa"/></svg> Aapke WhatsApp pe aisa message aayega</div>
+        <div class="bubble">Hi, I would like to enquire about an appointment at THE RED HAIR FAMILY SALON.
+
+Name: Priya Sharma
+Phone: +91 98765 43210
+Service: Hair Colour
+Preferred Date: Sunday, 20 September 2026
+Preferred Time: Evening<span class="time">5:42 PM ✓✓</span></div>
+      </div>
+    </div>
+
+    <p class="note"><span>ℹ︎</span><span><b>Dhyan dein:</b> sample website mein abhi demo photos hain. Final website mein <b>aapke salon ki asli photos</b>, aapki services aur aapka number lagega. Upar diya gaya customer ka naam aur number sirf udaharan hai.</span></p>
+  </div>
+
+  <div class="pagefoot"><span>THE RED HAIR FAMILY SALON · Website Proposal</span><span>Page 1 / 2</span></div>
+</section>
+
+<!-- ═════════════════════════ PAGE 2 ═════════════════════════ -->
+<section class="page">
+  <div class="p2head">
+    <div class="section-title eyebrow">Packages</div>
+    <h2 class="serif">Apne hisaab se <em>package chuniye</em></h2>
+    <p>Ye ek baar ka kharcha hai. Pehle saal ka website ka naam aur online chalne ka kharcha isi mein shamil hai. Koi chhupa hua charge nahi.</p>
+  </div>
+
+  <div class="cards">
+    <article class="card">
+      <div class="tier serif">Basic</div>
+      <div class="for">Online shuruaat ke liye</div>
+      <div class="price rupee">₹12,999</div>
+      <div class="once">ek baar</div>
+      <ul>
+        <li><svg><use href="#i-check"/></svg>Website aapki details ke saath taiyaar</li>
+        <li><svg><use href="#i-check"/></svg>WhatsApp booking form</li>
+        <li><svg><use href="#i-check"/></svg>Google rating aur reviews ka link</li>
+        <li><svg><use href="#i-check"/></svg>Google Maps se rasta</li>
+        <li><svg><use href="#i-check"/></svg>Mobile aur computer dono pe</li>
+        <li><svg><use href="#i-check"/></svg>Pehle saal ka poora kharcha shamil</li>
+      </ul>
+      <div class="renew"><span>Agle saal se</span><b class="rupee">₹3,499 / saal</b></div>
+    </article>
+
+    <article class="card pop">
+      <span class="badge">Sabse Badhiya</span>
+      <div class="tier serif">Growth</div>
+      <div class="for">Zyada customer laane ke liye</div>
+      <div class="price rupee">₹19,999</div>
+      <div class="once">ek baar</div>
+      <ul>
+        <li class="plus"><svg><use href="#i-check"/></svg>Basic ka sab kuch, plus:</li>
+        <li><svg><use href="#i-check"/></svg>Salon ki asli photos, main khud aake lunga</li>
+        <li><svg><use href="#i-check"/></svg>Aapka Google page website se jodna aur sudharna</li>
+        <li><svg><use href="#i-check"/></svg>Kitne log website dekh rahe, uska hisaab</li>
+        <li><svg><use href="#i-check"/></svg>3 mahine tak koi bhi badlaav free</li>
+      </ul>
+      <div class="renew"><span>Agle saal se</span><b class="rupee">₹3,999 / saal</b></div>
+    </article>
+
+    <article class="card">
+      <div class="tier serif">Premium</div>
+      <div class="for">Bina tension, sab main sambhalunga</div>
+      <div class="price rupee">₹29,999</div>
+      <div class="once">ek baar</div>
+      <ul>
+        <li class="plus"><svg><use href="#i-check"/></svg>Growth ka sab kuch, plus:</li>
+        <li><svg><use href="#i-check"/></svg>12 mahine poori dekhbhaal</li>
+        <li><svg><use href="#i-check"/></svg>Diwali, shaadi season ke offers website pe</li>
+        <li><svg><use href="#i-check"/></svg>Nayi photos aur services update</li>
+        <li><svg><use href="#i-check"/></svg>Har mahine enquiry ki report</li>
+      </ul>
+      <div class="renew"><span>Agle saal se</span><b class="rupee">₹4,999 / saal</b></div>
+    </article>
+  </div>
+
+  <div class="info">
+    <div class="box">
+      <h3 class="serif">Saal ka kharcha kyun?</h3>
+      <p>Jaise dukaan ka <b>board aur kiraya</b> hota hai, waise hi website ka ek naam hota hai (jaise <b>theredhairsalon.in</b>) aur use internet pe chalu rakhne ka saalana kharcha. Isse website <b>saal bhar, din-raat</b> chalti rahti hai. Website ka naam <b>aapke salon ke naam pe</b> register hoga.</p>
+    </div>
+    <div class="box">
+      <h3 class="serif">Payment kaise hoga?</h3>
+      <ul class="bullets">
+        <li><span><b>50% advance</b>: kaam shuru karne se pehle</span></li>
+        <li><span><b>50% baaki</b>: jab website live ho jaaye aur aapko pasand aa jaaye</span></li>
+        <li><span>Saalana kharcha har saal website ke renewal ke samay</span></li>
+      </ul>
+    </div>
+    <div class="box">
+      <h3 class="serif">Shuru karne ke liye aapse chahiye</h3>
+      <ul class="two" style="display:grid">
+        <li><span>WhatsApp number</span></li>
+        <li><span>Phone number</span></li>
+        <li><span>Salon ki timings</span></li>
+        <li><span>Services ki list</span></li>
+        <li><span>Google Maps ka link</span></li>
+        <li><span>Logo (agar ho)</span></li>
+      </ul>
+    </div>
+    <div class="box">
+      <h3 class="serif">Kitne din mein taiyaar?</h3>
+      <div class="timeline">
+        <div><b>Din 1</b>Details aur advance</div>
+        <div><b>Din 2–5</b>Photos aur website</div>
+        <div><b>Din 7–10</b>Website live</div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="cta">
+    <div>
+      <div class="big serif">Shuru karein? <em>Bas ek message kijiye.</em></div>
+      <div class="valid">Ye proposal 30 September 2026 tak valid hai.</div>
+    </div>
+    <div class="who">
+      <div>Praveen</div>
+      <div class="wa"><svg><use href="#i-wa"/></svg>+91 86689 34765</div>
+    </div>
+  </footer>
+</section>
+
+</body>
+</html>
